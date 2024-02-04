@@ -14,12 +14,10 @@ export default function Search({ recipes, setRecipes }) {
         const response = await fetch(`${URL}?apiKey=${API_KEY}&query=${query}`);
 
         if (response.status === 401) {
-          console.error("Unauthorized: 401 error");
           setError(true);
         } else {
           const data = await response.json();
           setRecipes(data.results);
-          console.log(data);
         }
       }
 
