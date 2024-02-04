@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import styles from "./search.module.css";
 
 const URL = "https://api.spoonacular.com/recipes/complexSearch";
-
-const demo_URL = "https://jsonplaceholder.typicode.com";
 export default function Search({ recipes, setRecipes }) {
   const [query, setQuery] = useState("tandoori chicken");
   const [error, setError] = useState(false);
