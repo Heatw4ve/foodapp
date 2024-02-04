@@ -13,7 +13,7 @@ export default function FoodDetails({ recipeId }) {
     async function fetchDetails() {
       const response = await fetch(`${URL}?apiKey=${API_KEY}`);
       const data = await response.json();
-      console.log(data);
+      
       setRecipeDetails(data);
       setLoading(false);
     }
