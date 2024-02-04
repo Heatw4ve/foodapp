@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import styles from "./search.module.css";
 
 const URL = "https://api.spoonacular.com/recipes/complexSearch";
-
-const demo_URL = "https://jsonplaceholder.typicode.com";
 export default function Search({ recipes, setRecipes }) {
   const [query, setQuery] = useState("tandoori chicken");
   const [error, setError] = useState(false);
@@ -16,12 +14,10 @@ export default function Search({ recipes, setRecipes }) {
         const response = await fetch(`${URL}?apiKey=${API_KEY}&query=${query}`);
 
         if (response.status === 401) {
-          console.error("Unauthorized: 401 error");
           setError(true);
         } else {
           const data = await response.json();
           setRecipes(data.results);
-          console.log(data);
         }
       }
 
