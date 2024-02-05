@@ -5,9 +5,4 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/foodapp/",
   plugins: [react()],
-  build: {
-    rollupOptions: {
-      external: ["/foodapp/assets/index-5fa03c7d.js"],
-    },
-  },
 });
